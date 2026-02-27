@@ -92,24 +92,40 @@
                 <h2>Remote Dev Workspace</h2>
                 <p>Establishing encrypted tunnel to <code>dev.skyforce.online</code></p>
             </div>
-            <button class="btn-white" onclick="location.href='dev/'">Launch Session</button>
+            <div style="display: flex; gap: 1rem;">
+                <div id="tunnelStatus" class="status-pill"
+                    style="background: rgba(255,255,255,0.1); color: #fff; margin-bottom: 0;">
+                    <div class="status-dot" style="background: #4ade80;"></div>
+                    SECURE TUNNEL L3
+                </div>
+                <button class="btn-white" onclick="location.href='dev/'">Launch Session</button>
+            </div>
         </div>
 
-        <div class="list-section">
-            <h3>Neural Activity</h3>
-            <div class="feed-item">
-                <span class="feed-text">Fine-tuning cycle successful for <strong>openclaw-v3</strong></span>
-                <span class="feed-meta">14:23 UTC</span>
+        <section class="list-section"
+            style="max-width: none; background: #f7f7f8; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="margin-bottom: 0.25rem;">Neural Journal</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-sub);">Draft and deploy architectural insights to
+                        <code>skyforce.online</code></p>
+                </div>
+                <button class="btn-black" id="newPostBtn">New Journal Entry</button>
             </div>
+
             <div class="feed-item">
-                <span class="feed-text">Infrastructure sync: <code>main</code> branch deployed</span>
-                <span class="feed-meta">12:05 UTC</span>
+                <div style="display: flex; flex-direction: column;">
+                    <span class="feed-text" style="font-weight: 700;">Designing the Command Center Gateway</span>
+                    <span style="font-size: 0.8rem; color: var(--text-sub);">Draft saved locally on AWS Instance</span>
+                </div>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <span class="feed-meta">8 mins ago</span>
+                    <button
+                        style="background: none; border: 1px solid var(--border-subtle); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; cursor: pointer;">Deploy
+                        Now</button>
+                </div>
             </div>
-            <div class="feed-item">
-                <span class="feed-text">Node "Centauri-01" joined the private mesh</span>
-                <span class="feed-meta">Yesterday</span>
-            </div>
-        </div>
+        </section>
     </main>
 
     <script>
