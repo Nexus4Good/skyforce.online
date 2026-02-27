@@ -85,7 +85,7 @@
                 style="font-family: var(--font-mono); font-size: 0.8rem;">
         </div>
 
-        <button class="btn-black" style="width: 100%;">Initialize Environment</button>
+        <button class="btn-black" style="width: 100%;" id="loginBtn">Initialize Environment</button>
 
         <div
             style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-sub);">
@@ -99,6 +99,21 @@
 
     <script>
         lucide.createIcons();
+
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            const btn = document.getElementById('loginBtn');
+            const originalText = btn.innerText;
+            btn.innerText = 'Establishing Tunnel...';
+            btn.disabled = true;
+
+            // In a real scenario, this would check the access key against a backend
+            // For now, we simulate the handshake and redirect to the tunnel endpoint
+            setTimeout(() => {
+                // Point this to your actual Cloudflare Tunnel URL
+                // e.g., https://workspace.skyforce.online
+                window.location.href = 'https://dev.skyforce.online';
+            }, 1200);
+        });
     </script>
 </body>
 
